@@ -282,9 +282,12 @@ label::after {
   .cardsSwiper {
     width: 75% !important;
     margin: 0 !important;
-
     /* left: 0%; */
-    /* position: absolute; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(calc(-50% - 2.9px)) translateY(calc(-50% - 06px));
+
     /* top: 50%; */
     /* transform: translateY(-50%); */
   }
