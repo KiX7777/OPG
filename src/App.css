@@ -277,7 +277,7 @@ label::after {
   margin-top: 5%;
   width: 30% !important;
   max-width: 500px;
-  max-height: 500px;
+  max-height: 450px;
   border-radius: 10px;
   /* /* } */
 }
@@ -296,9 +296,10 @@ label::after {
   }
 
   .cardsSwiper {
-    width: 80% !important;
+    width: 75% !important;
     margin: 0;
 
+    left: 0%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
