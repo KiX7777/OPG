@@ -5,11 +5,10 @@ import classes from './Proizvod.module.css';
 const Proizvod = (props) => {
   const params = useParams();
   const navigate = useNavigate();
-  const item = products.find((item) => item.id === +params.productId);
+  const item = products.find((item) => item.id === props.id);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  console.log(location);
-  console.log(queryParams.get('order'));
+
   const firstParam = queryParams.get('order');
 
   function handleBack() {
@@ -27,7 +26,13 @@ const Proizvod = (props) => {
     //   {firstParam === 'da' && <h5>Naručeno</h5>}
     <div className={classes.product}>
       <div className={classes.productInfo}>
-        <h1>{props.name}</h1>
+        <h1
+          onClick={() => {
+            props.openModal(props.id - 1);
+          }}
+        >
+          {props.name}
+        </h1>
         <h2>
           {new Intl.NumberFormat('hr-HR', {
             style: 'currency',

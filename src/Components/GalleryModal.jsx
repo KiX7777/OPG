@@ -1,5 +1,4 @@
 import classes from '../pages/Gallery.module.css';
-import GallerySlider from './GallerySlider';
 
 const GalleryModal = (props) => {
   return (
@@ -7,7 +6,7 @@ const GalleryModal = (props) => {
       <div className={classes.backdrop}></div>
       <div className={classes.galleryModal}>
         {/* <img src={props.img} /> */}
-        <GallerySlider />
+        <p className={classes.productText}>{props.text}</p>
         <button
           type='button'
           onClick={props.closeModal}

@@ -1,17 +1,22 @@
 import classes from './MainNav.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useState } from 'react';
-import burger from '../imgs/burger.svg';
 
 const MainNav = () => {
   const [openMenu, setopenMenu] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <BrowserView>
         <nav>
-          <div className={classes.logo}>
+          <div
+            className={classes.logo}
+            onClick={() => {
+              navigate('/home');
+            }}
+          >
             <img src={logo} alt='logo' />
           </div>
           <ul>
@@ -71,7 +76,13 @@ const MainNav = () => {
       <MobileView>
         <nav>
           <div className={classes.logo}>
-            <img src={logo} alt='logo' />
+            <img
+              src={logo}
+              alt='logo'
+              onClick={() => {
+                navigate('/home');
+              }}
+            />
           </div>
           <button
             type='button'
@@ -79,7 +90,7 @@ const MainNav = () => {
             style={{
               backgroundImage: !openMenu
                 ? `url('/src/imgs/burger.svg')`
-                : `url('/src/imgs/close.svg')`,
+                : `url('/src/imgs/close.png')`,
               backgroundSize: 'cover',
             }}
             onClick={() => {
@@ -104,7 +115,7 @@ const MainNav = () => {
                     navData.isActive ? classes.active : ''
                   }
                 >
-                  Home
+                  Početna
                 </NavLink>
               </li>
               <li>
@@ -117,7 +128,7 @@ const MainNav = () => {
                     navData.isActive ? classes.active : ''
                   }
                 >
-                  About
+                  O nama
                 </NavLink>
               </li>
               <li>
@@ -130,7 +141,7 @@ const MainNav = () => {
                     navData.isActive ? classes.active : ''
                   }
                 >
-                  Products
+                  Proizvodi
                 </NavLink>
               </li>
               <li>
@@ -143,7 +154,7 @@ const MainNav = () => {
                     navData.isActive ? classes.active : ''
                   }
                 >
-                  Gallery
+                  Galerija
                 </NavLink>
               </li>
               <li>
@@ -156,7 +167,7 @@ const MainNav = () => {
                     navData.isActive ? classes.active : ''
                   }
                 >
-                  Contact
+                  Kontakt
                 </NavLink>
               </li>
             </ul>

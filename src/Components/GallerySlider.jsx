@@ -3,12 +3,26 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper';
 import '../App.css';
 import repica from '../imgs/repica.jpg';
+import pic1 from '../imgs/pic1.jpg';
+import pic2 from '../imgs/pic2.jpg';
+import pic3 from '../imgs/pic3.png';
+import pic4 from '../imgs/pic4.jpg';
+import pic5 from '../imgs/pic5.jpg';
+import pic6 from '../imgs/pic6.jpg';
+import pic7 from '../imgs/pic7.jpg';
 
 import 'swiper/css/bundle';
+
+let photos = [pic1, pic2, pic3, repica, pic4, pic5, pic6, pic7];
 
 register();
 const GallerySlider = () => {
   const swiper = useSwiper();
+  const slides = photos.map((photo, i) => (
+    <SwiperSlide key={i}>
+      <img key={i} src={photos[i]} />
+    </SwiperSlide>
+  ));
   return (
     <Swiper
       key='swiper'
@@ -23,36 +37,7 @@ const GallerySlider = () => {
       navigation={true}
       loop={true}
     >
-      <SwiperSlide>
-        <img
-          key='1'
-          onClick={() => {
-            swiper.activeIndex(2);
-          }}
-          src='https://images.unsplash.com/photo-1549269459-ba9e31874ef2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img key='2' src={repica} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          key='3'
-          src='https://images.unsplash.com/photo-1568526381923-caf3fd520382?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          key='4'
-          src='https://images.unsplash.com/photo-1600752384899-7d3dcbb2428c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          key='5'
-          src='https://images.unsplash.com/photo-1586779161268-51d3e65d20fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-        />
-      </SwiperSlide>
+      {slides}
       {/* <NavBtns /> */}
     </Swiper>
   );

@@ -2,7 +2,7 @@ import MainNav from '../Components/MainNav';
 
 const Layout = (props) => {
   return (
-    <div>
+    <div className='page'>
       <MainNav />
       {props.children}
     </div>
