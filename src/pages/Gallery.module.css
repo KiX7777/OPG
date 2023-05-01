@@ -1,0 +1,68 @@
+.galleryContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  height: 90vh;
+  padding: 20px;
+  max-height: 100vh;
+}
+
+.photo {
+  border-radius: 5px;
+  width: 100%;
+  transition: 300ms ease-in-out;
+  border: 5px solid #efefef;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 6px rgba(255, 255, 255, 0.2);
+}
+
+.photo:hover {
+  transform: scale(1.05);
+}
+
+.galleryModal {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 30%;
+  left: 50%;
+  z-index: 200;
+  transform: translate(-50%, -30%);
+  animation: 400ms openmodal forwards ease-out;
+}
+
+@keyframes openmodal {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.closeModal {
+  font-size: 24px;
+  color: black;
+  background-color: #ffc304;
+  position: absolute;
+  font-weight: 800;
+  top: -10px;
+  right: -25px;
+}
+
+@media screen and (width <= 500px) {
+  .galleryContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}/*# sourceMappingURL=Gallery.module.css.map */

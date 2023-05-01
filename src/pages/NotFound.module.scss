@@ -1,0 +1,27 @@
+.notFound {
+  font-size: 32px;
+  color: aqua;
+  animation: notfound 1s infinite ease alternate-reverse;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20vh;
+}
+
+@keyframes notfound {
+  from {
+    transform: scale(1);
+    color: aqua;
+  }
+  to {
+    transform: scale(1.4);
+    color: red;
+  }
+}
+
+.errorPic {
+  width: 300px;
+  position: absolute;
+  left: 50vw;
+  transform: translateX(-50%);
+}
