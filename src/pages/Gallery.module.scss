@@ -80,7 +80,7 @@
   .galleryModal {
     width: 80%;
     overflow: auto;
-    transform: translate(calc(-50% - 0.4px), calc(-50% - 0.4px));
+    transform: translate(calc(-50% - 0.3px), calc(-50% - 0.4px)) !important;
   }
   .closeModal {
     right: 0;

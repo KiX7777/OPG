@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import classes from '../pages/Contact.module.css';
 
 const ContactForm = () => {
   const [name, setname] = useState('');
@@ -41,7 +42,7 @@ const ContactForm = () => {
 
   return (
     <form>
-      <div className='formContainer'>
+      <div className={classes.formContainer}>
         <label htmlFor='name'>Name</label>
         <input
           id='name'
@@ -58,7 +59,7 @@ const ContactForm = () => {
         ></input>
         {nameError && <small className='errorMsg'>Enter your name.</small>}
       </div>
-      <div className='formContainer'>
+      <div className={classes.formContainer}>
         <label htmlFor='email'>Email</label>
         <input
           id='email'
@@ -75,7 +76,7 @@ const ContactForm = () => {
         {emailError && <small className='errorMsg'>Enter your email.</small>}
       </div>
 
-      <div className='formContainer'>
+      <div className={classes.formContainer}>
         <label htmlFor='text'>Message</label>
         <textarea
           value={text}

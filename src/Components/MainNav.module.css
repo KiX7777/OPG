@@ -1,7 +1,9 @@
 nav {
   width: 100%;
   background-color: #333;
-  background-color: rgba(0, 0, 0, 0.603);
+  /* background-color: rgba(0, 0, 0, 0.603); */
+  background-color: #ee7f11;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,6 +28,7 @@ nav li a {
   font-size: clamp(16px, 2vw, 32px);
   position: relative;
   transition: 300ms ease;
+  color: black;
 }
 
 nav li a::after {
@@ -40,7 +43,7 @@ nav li a::after {
 }
 
 nav li:hover a {
-  color: yellow;
+  color: #ffcc2c;
 }
 
 nav a.active::after,
@@ -57,7 +60,7 @@ nav a.focus::after {
 .logo img {
   max-width: 100%;
   max-height: 100%;
-  filter: grayscale(1) invert(1);
+  /* filter: grayscale(1) invert(1); */
 }
 
 .logo:active {
