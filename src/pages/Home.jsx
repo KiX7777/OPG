@@ -1,5 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import classes from './Home.module.css';
+import { ScaleLoader } from 'react-spinners';
+import LoadingSpinner from '../Components/LoadingSpinner';
 
 const Home = () => {
   const location = useLocation();
