@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useState } from 'react';
+import burger from '../imgs/burger.svg';
 
 const MainNav = () => {
   const [openMenu, setopenMenu] = useState(false);
@@ -89,8 +90,8 @@ const MainNav = () => {
             className={classes.toggleMenu}
             style={{
               backgroundImage: !openMenu
-                ? `url('/src/imgs/burger.svg')`
-                : `url('/src/imgs/close.png')`,
+                ? `url('../src/imgs/burger.svg')`
+                : `url('../src/imgs/close.png')`,
               backgroundSize: 'cover',
             }}
             onClick={() => {
