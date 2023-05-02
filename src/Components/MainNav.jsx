@@ -90,8 +90,8 @@ const MainNav = () => {
             className={classes.toggleMenu}
             style={{
               backgroundImage: !openMenu
-                ? `url('/src/imgs/burger.svg')`
-                : `url('/src/imgs/close.png')`,
+                ? `url('/imgs/burger.svg')`
+                : `url('/imgs/close.png')`,
               backgroundSize: 'cover',
             }}
             onClick={() => {
