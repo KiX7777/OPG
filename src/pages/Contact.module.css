@@ -179,6 +179,9 @@ input:first-of-type:invalid:focus {
 }
 
 @media screen and (width <500px) {
+  .contactContainer {
+    height: calc((var(--dvh, 1dvh) * 90));
+  }
   form {
     margin-top: 20px;
     width: 90%;

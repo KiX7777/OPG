@@ -8,7 +8,7 @@ const About = () => {
     <div className={classes.aboutContainer}>
       <h1>About</h1>
       <div className={classes.mapContainer}>
-        <div style={{ width: '100%', height: '50dvh' }}>
+        <div className={classes.map} style={{ width: '100%', height: '50dvh' }}>
           {loadMap && (
             <ScaleLoader
               color='white'

@@ -19,6 +19,19 @@
 .mapContainer {
   width: 30%;
   margin-left: auto;
-  height: 80%;
   position: relative;
+}
+
+@media screen and (width < 500px) {
+  .aboutContainer {
+    height: calc(var(--vh, 1vh) * 90);
+    padding: 10px;
+  }
+  .mapContainer {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .map {
+    height: 40dvh !important;
+  }
 }/*# sourceMappingURL=About.module.css.map */
