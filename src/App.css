@@ -141,6 +141,13 @@ li a {
 }
 
 @media (width <500px) {
+  body,
+  html,
+  #root,
+  .page {
+    width: 100vw;
+  }
+
   .mySwiper {
     width: 100%;
     top: 50%;
