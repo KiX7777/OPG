@@ -94,7 +94,9 @@ const ContactForm = () => {
                 setnameTouched(true);
               }}
             ></input>
-            {nameError && <small className='errorMsg'>Enter your name.</small>}
+            {nameError && (
+              <small className={classes.errorMsg}>Enter your name.</small>
+            )}
           </div>
           <div className={classes.formContainer}>
             <label htmlFor='email'>Email</label>
@@ -111,7 +113,7 @@ const ContactForm = () => {
               }}
             ></input>
             {emailError && (
-              <small className='errorMsg'>Enter your email.</small>
+              <small className={classes.errorMsg}>Enter your email.</small>
             )}
           </div>
 
@@ -129,7 +131,7 @@ const ContactForm = () => {
               }}
             ></textarea>
             {textError && (
-              <small className='errorMsg'>
+              <small className={classes.errorMsg}>
                 Enter your message that you want to send.
               </small>
             )}

@@ -153,7 +153,8 @@ input {
 }
 
 .errorMsg {
-  color: red;
+  color: rgb(147, 5, 5);
+  font-weight: 800;
   margin: 0;
   animation: showError 400ms ease forwards,
     error 500ms alternate-reverse infinite;
