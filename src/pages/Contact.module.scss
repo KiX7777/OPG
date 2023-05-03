@@ -9,7 +9,7 @@
 }
 
 .contactContainer::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 75px;
   left: 0;
@@ -17,14 +17,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -1;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
-
 .contactContainer h1 {
   margin: 50px 0;
 }
-
 .formsContainer {
   position: relative;
   width: 100%;
@@ -73,10 +70,6 @@ textarea {
   font-family: inherit;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: black;
-}
-
 input::placeholder,
 textarea::placeholder {
   color: black;
@@ -115,7 +108,7 @@ form button {
 }
 
 form button::after {
-  content: "";
+  content: '';
   width: 0%;
   height: 99%;
   position: absolute;
@@ -130,7 +123,6 @@ form button::after {
 form button:hover::after {
   width: 100%;
 }
-
 form button:hover {
   color: black;
 }
@@ -145,7 +137,7 @@ form button:hover {
 }
 
 label::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -163,7 +155,8 @@ input {
 .errorMsg {
   color: red;
   margin: 0;
-  animation: showError 400ms ease forwards, error 500ms alternate-reverse infinite;
+  animation: showError 400ms ease forwards,
+    error 500ms alternate-reverse infinite;
 }
 
 small:last-of-type {
@@ -184,6 +177,7 @@ input:first-of-type:invalid:focus {
     opacity: 1;
   }
 }
+
 @keyframes error {
   from {
     transform: scale(1);
@@ -192,28 +186,33 @@ input:first-of-type:invalid:focus {
     transform: scale(1.15);
   }
 }
-@media screen and (width < 500px) {
+
+@media screen and (width <500px) {
   .contactContainer {
-    height: calc(var(--dvh, 1dvh) * 90);
+    height: calc((var(--dvh, 1dvh) * 90));
     gap: 0;
   }
   form {
     margin-top: 20px;
     width: 90%;
   }
+
   input,
   textarea {
     width: 100%;
   }
+
   .formsContainer {
     margin: 0;
   }
 }
-@media screen and (width < 300px) {
+
+@media screen and (width <300px) {
   h1 {
     font-size: 24px;
   }
+
   .contactContainer {
     overflow: hidden;
   }
-}/*# sourceMappingURL=Contact.module.css.map */
+}
