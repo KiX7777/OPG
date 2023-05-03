@@ -26,13 +26,13 @@ const Proizvod = (props) => {
     //   {firstParam === 'da' && <h5>Naručeno</h5>}
     <div className={classes.product}>
       <div className={classes.productInfo}>
-        <h1
+        <span
+          className={classes.openInfo}
           onClick={() => {
             props.openModal(props.id - 1);
           }}
-        >
-          {props.name}
-        </h1>
+        ></span>
+        <h1>{props.name}</h1>
         <h2>
           {new Intl.NumberFormat('hr-HR', {
             style: 'currency',

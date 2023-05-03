@@ -3,6 +3,9 @@
   height: calc(100dvh - 75px);
   flex: 1;
 }
+.homeContainer h1 {
+  margin-top: 20px;
+}
 
 .homeContainer::after {
   content: "";

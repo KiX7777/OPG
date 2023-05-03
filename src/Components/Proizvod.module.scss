@@ -3,6 +3,11 @@
   width: 100%;
   position: relative;
   max-width: 100%;
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
 .productContainer::after {
@@ -18,7 +23,7 @@
 }
 
 .product {
-  background-color: white;
+  background-color: #efefef;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
   margin: 0 auto;
   color: black;
@@ -41,6 +46,9 @@
   flex-basis: 20%;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
 }
 
 .product h1,
@@ -48,10 +56,22 @@ h2 {
   text-align: center;
 }
 .product h2 {
-  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.5rem);
+  font-size: 6cqi;
 }
 .product h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-size: 8cqi;
+}
+
+.openInfo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('/public/imgs/info.svg');
+  cursor: pointer;
+  background-size: cover;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-25%);
 }
 
 .product {
@@ -96,14 +116,5 @@ button {
 
   button {
     font-size: 16px;
-  }
-}
-
-@media screen and (width <500px) {
-  .product h2 {
-    font-size: clamp(0.9rem, 1vw, 1.5rem);
-  }
-  .product h1 {
-    font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
   }
 }

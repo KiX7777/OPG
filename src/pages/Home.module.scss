@@ -2,6 +2,10 @@
   width: 100%;
   height: calc(100dvh - 75px);
   flex: 1;
+
+  h1 {
+    margin-top: 20px;
+  }
 }
 
 .homeContainer::after {

@@ -162,7 +162,7 @@ li a {
     /* left: 0%; */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translateX(calc(-50% - 2.9px)) translateY(calc(-50% - 6px));
 
     /* top: 50%; */
@@ -193,5 +193,6 @@ li a {
   .cardsSwiper {
     min-height: 300px;
     height: 350px;
+    position: absolute;
   }
 }

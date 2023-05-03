@@ -40,20 +40,7 @@ const ProductList = (props) => {
 
   return (
     <div className={classes.productContainer}>
-      {/* <ul
-        className='productList'
-        style={{
-          justifyContent: 'center',
-        }}
-      >
-        {products.map((product) => (
-          <li className='productItem' key={product.id}>
-            <Link className='productName' to={`/products/${product.id}`}>
-              {product.name}
-            </Link>
-          </li>
-        ))}
-      </ul> */}
+      <h1>Proizvodi</h1>
 
       <Swiper
         effect={'cards'}
