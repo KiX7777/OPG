@@ -109,13 +109,6 @@
     width: 80%;
     transform: translate(calc(-50% - 0.3px), calc(-50% - 0.4px)) !important;
   }
-  .galleryModal .closeModal {
-    position: absolute;
-    z-index: 200;
-    top: 10%;
-    right: 5%;
-    padding: 5px 10px;
-  }
   .galleryModal .productInfo {
     position: relative;
     width: 100%;
@@ -126,5 +119,9 @@
   }
   .galleryModal .productInfo p {
     font-size: 4cqi;
+  }
+  .closeModal {
+    position: absolute;
+    right: 5%;
   }
 }/*# sourceMappingURL=Gallery.module.css.map */

@@ -117,14 +117,6 @@
     width: 80%;
     transform: translate(calc(-50% - 0.3px), calc(-50% - 0.4px)) !important;
 
-    .closeModal {
-      position: absolute;
-      z-index: 200;
-      top: 10%;
-      right: 5%;
-      padding: 5px 10px;
-    }
-
     .productInfo {
       position: relative;
       width: 100%;
@@ -137,5 +129,9 @@
         font-size: 4cqi;
       }
     }
+  }
+  .closeModal {
+    position: absolute;
+    right: 5%;
   }
 }
