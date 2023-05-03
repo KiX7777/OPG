@@ -9,14 +9,14 @@ const GalleryModal = (props) => {
         <div className={classes.productInfo}>
           <p className={classes.productText}>{props.text}</p>
         </div>
-        <button
-          type='button'
-          onClick={props.closeModal}
-          className={classes.closeModal}
-        >
-          X
-        </button>
       </div>
+      <button
+        type='button'
+        onClick={props.closeModal}
+        className={classes.closeModal}
+      >
+        X
+      </button>
     </div>
   );
 };
