@@ -22,7 +22,7 @@ html {
   background-image: url('./imgs/pic6.jpg');
   background-image: url('./imgs/background.JPG');
   background-size: cover;
-  min-height: -webkit-fill-available;
+  /* min-height: -webkit-fill-available; */
   background-repeat: no-repeat;
   background-position: 0 20%;
   position: relative;
