@@ -1,5 +1,11 @@
 .contactContainer {
   min-height: calc(100dvh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
 }
 
 .contactContainer::after {
@@ -13,10 +19,13 @@
   z-index: -1;
   backdrop-filter: blur(4px);
 }
-
+.contactContainer h1 {
+  margin: 50px 0;
+}
 .formsContainer {
   position: relative;
-  min-height: 80vh;
+  width: 100%;
+  flex: 1;
 }
 
 .formLoader {
@@ -181,6 +190,7 @@ input:first-of-type:invalid:focus {
 @media screen and (width <500px) {
   .contactContainer {
     height: calc((var(--dvh, 1dvh) * 90));
+    gap: 0;
   }
   form {
     margin-top: 20px;
@@ -190,5 +200,19 @@ input:first-of-type:invalid:focus {
   input,
   textarea {
     width: 100%;
+  }
+
+  .formsContainer {
+    margin: 0;
+  }
+}
+
+@media screen and (width <300px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .contactContainer {
+    overflow: hidden;
   }
 }

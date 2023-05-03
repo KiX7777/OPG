@@ -98,3 +98,12 @@ button {
     font-size: 16px;
   }
 }
+
+@media screen and (width <500px) {
+  .product h2 {
+    font-size: clamp(0.9rem, 1vw, 1.5rem);
+  }
+  .product h1 {
+    font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
+  }
+}
