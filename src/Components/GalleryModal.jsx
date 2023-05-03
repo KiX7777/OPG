@@ -2,11 +2,13 @@ import classes from '../pages/Gallery.module.css';
 
 const GalleryModal = (props) => {
   return (
-    <div className={classes.modal}>
+    <div>
       <div className={classes.backdrop}></div>
       <div className={classes.galleryModal}>
         {/* <img src={props.img} /> */}
-        <p className={classes.productText}>{props.text}</p>
+        <div className={classes.productInfo}>
+          <p className={classes.productText}>{props.text}</p>
+        </div>
         <button
           type='button'
           onClick={props.closeModal}
