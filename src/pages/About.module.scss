@@ -23,7 +23,7 @@
 
 @media screen and (width <500px) {
   .aboutContainer {
-    height: calc((var(--vh, 1vh) * 90));
+    height: calc((var(--dvh, 1dvh) * 90));
     padding: 10px;
   }
   .mapContainer {
