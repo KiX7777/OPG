@@ -104,7 +104,7 @@
   .hexContainer {
     transform: rotate(90deg);
     min-height: initial;
-    height: 90%;
+    height: 80%;
   }
   .hexagon {
     width: 225px;
@@ -112,5 +112,25 @@
   .row:last-of-type {
     position: relative;
     left: 25%;
+  }
+}
+@media screen and (width <= 400px) {
+  .hexagon {
+    width: 200px;
+  }
+  .row:last-of-type {
+    position: relative;
+  }
+}
+@media screen and (width <= 400px) and (height < 700px) {
+  .hexContainer {
+    width: 90%;
+    align-items: normal;
+  }
+  .hexagon {
+    width: 200px;
+  }
+  .row:last-of-type {
+    position: relative;
   }
 }/*# sourceMappingURL=HexagonMenu.module.css.map */
