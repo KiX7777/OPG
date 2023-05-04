@@ -1,7 +1,7 @@
 import classes from './HexagonMenu.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const HexagonMenu = () => {
+const HexagonMenu = ({ setIsHome }) => {
   const navigate = useNavigate();
 
   return (

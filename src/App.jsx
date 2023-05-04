@@ -15,13 +15,18 @@ const Proizvod = React.lazy(() => import('./Components/Proizvod'));
 const Products = React.lazy(() => import('./pages/Products'));
 
 function App() {
+  const [isHome, setIsHome] = useState(true);
+
   return (
     <>
-      <Layout>
+      <Layout setIsHome={setIsHome} isHome={isHome}>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path='/' element={<Navigate to='/home' />} />
-            <Route path='/home' element={<Home />} />
+            <Route
+              path='/home'
+              element={<Home setIsHome={setIsHome} isHome={isHome} />}
+            />
 
             <Route path='/about' element={<About />} />
             <Route path='/products/'>

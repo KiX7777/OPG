@@ -1,13 +1,12 @@
 import classes from './MainNav.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from '/imgs/logo.png';
+import logo from '/imgs/logo.webp';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useState } from 'react';
 import burger from '/imgs/burger.svg';
 
-const MainNav = () => {
+const MainNav = ({ isHome, setIsHome }) => {
   const [openMenu, setopenMenu] = useState(false);
-  const [isHome, setIsHome] = useState(true);
   const navigate = useNavigate();
   return (
     <>
@@ -97,7 +96,7 @@ const MainNav = () => {
               }}
             />
           </div>
-          <button
+          {/* <button
             type='button'
             className={classes.toggleMenu}
             style={{
@@ -111,7 +110,20 @@ const MainNav = () => {
             }}
           >
             {/* <img src={burger} /> */}
-          </button>
+          {/* </button> */}
+
+          <div
+            onClick={() => {
+              setopenMenu((prev) => !prev);
+            }}
+            className={`${classes.hamburger} ${
+              openMenu ? `${classes.open}` : ''
+            }`}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           {
             <ul
               className={`${classes.mobileNav} ${

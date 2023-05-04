@@ -12,7 +12,7 @@
   .logo {
     max-width: 500px;
     width: 30vw;
-    filter: drop-shadow(0 8px 3px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 0.3));
   }
 }
 
@@ -30,18 +30,7 @@
   }
 }
 
-.homeContainer::after {
-  content: '';
-  position: absolute;
-  top: 75px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: -1;
-
-  backdrop-filter: blur(6px);
-}
+//
 
 .submitMsg {
   margin: 0 auto;

@@ -6,7 +6,7 @@ const About = () => {
   const [loadMap, setLoadMap] = useState(true);
   return (
     <div className={classes.aboutContainer}>
-      <h1>About</h1>
+      <h1>O nama</h1>
       <div className={classes.mapContainer}>
         <div className={classes.map} style={{ width: '100%', height: '50dvh' }}>
           {loadMap && (

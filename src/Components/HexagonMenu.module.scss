@@ -63,6 +63,11 @@
   z-index: -1;
   top: 2.25px;
 }
+.hexagon::after {
+  background-color: transparent;
+  filter: invert(6%) sepia(33%) saturate(6730%) hue-rotate(358deg)
+    brightness(87%) contrast(94%);
+}
 
 .hexagon,
 .hexagon::before {
@@ -154,7 +159,7 @@
   .hexContainer {
     transform: rotate(90deg);
     min-height: initial;
-    height: 80%;
+    height: 90%;
   }
   .hexagon {
     width: 225px;

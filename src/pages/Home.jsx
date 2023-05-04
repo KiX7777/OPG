@@ -1,9 +1,10 @@
 import { useLocation } from 'react-router-dom';
 import classes from './Home.module.css';
 import HexagonMenu from '../Components/HexagonMenu';
-import logo from '/imgs/logo.png';
+import logo from '/imgs/logo.webp';
+import { memo } from 'react';
 
-const Home = () => {
+const Home = memo(({ setIsHome }) => {
   const location = useLocation();
 
   return (
@@ -15,9 +16,9 @@ const Home = () => {
         <p>Pčelarstvo</p>
         <img className={classes.logo} src={logo} />
       </div>
-      <HexagonMenu />
+      <HexagonMenu setIsHome={setIsHome} />
     </div>
   );
-};
+});
 
 export default Home;
