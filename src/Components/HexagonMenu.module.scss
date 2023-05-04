@@ -194,6 +194,10 @@
   .row:last-of-type {
     position: relative;
   }
+  .row {
+    height: calc(35% - 5px);
+    width: 100%;
+  }
 }
 
 @media screen and (width<=950px) and (height<500px) {
