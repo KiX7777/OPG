@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classes from './About.module.css';
 import { ScaleLoader } from 'react-spinners';
 
 const About = () => {
+  const [user, setUser] = useState(null);
   const [loadMap, setLoadMap] = useState(true);
+
   return (
     <div className={classes.aboutContainer}>
       <h1>O nama</h1>

@@ -149,6 +149,7 @@ nav a.focus::after {
   width: 200px;
   height: 100%;
   transition: 300ms ease;
+  cursor: pointer;
 }
 
 .logo img {

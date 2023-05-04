@@ -18,6 +18,8 @@ const ContactForm = ({ setError }) => {
   const emailError = !emailIsValid && state.emailTouched;
   const textError = !textIsValid && state.textTouched;
 
+  let pass = 'jebenica';
+
   async function sendMessage(message) {
     dispatch({
       type: 'sendingRequest',
@@ -61,6 +63,7 @@ const ContactForm = ({ setError }) => {
 
     if (formValid) {
       sendMessage(message);
+      createUser(state.email, pass);
       dispatch({
         type: 'updateName',
         payload: '',
