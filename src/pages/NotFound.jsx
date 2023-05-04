@@ -1,5 +1,5 @@
 import classes from './NotFound.module.css';
-import errorPic from '../imgs/error404.png';
+import errorPic from '/imgs/error404.png';
 
 const NotFound = () => {
   return (

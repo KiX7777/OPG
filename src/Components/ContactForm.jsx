@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from '../pages/Contact.module.css';
 import { ScaleLoader } from 'react-spinners';
+import { state, dispatch } from './contactReducer';
 
-const ContactForm = () => {
+const ContactForm = ({ setError }) => {
   const [name, setname] = useState('');
   const [email, setemail] = useState('');
   const [text, settext] = useState('');
@@ -19,7 +20,6 @@ const ContactForm = () => {
   const textIsValid = text.length > 0;
 
   const formValid = nameIsValid && emailIsValid && textIsValid;
-
   const nameError = !nameIsValid && nameTouched;
   const emailError = !emailIsValid && emailTouched;
   const textError = !textIsValid && textTouched;
@@ -37,14 +37,14 @@ const ContactForm = () => {
           },
         }
       );
+      console.log(res);
       if (!res.ok) {
-        throw new Error('Sending message failed!');
+        setError('Sending message failed!');
       }
       const data = await res.json();
-      console.log(data);
       navigate('/home', { state: 'Thank you for your message.' });
     } catch (err) {
-      console.error(err);
+      setError(err);
     }
     setisSending(false);
   }
@@ -65,6 +65,9 @@ const ContactForm = () => {
       setname('');
       setemail('');
       settext('');
+      setnameTouched(false);
+      setemailTouched(false);
+      settextTouched(false);
     } else {
       setnameTouched(true);
       setemailTouched(true);

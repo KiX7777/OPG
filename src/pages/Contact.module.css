@@ -167,6 +167,27 @@ input {
   animation: showError 400ms ease forwards, error 500ms alternate-reverse infinite;
 }
 
+.submitError {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  color: red;
+  animation: disappear 500ms ease-out forwards 3s;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
 small:last-of-type {
   bottom: -20px;
 }

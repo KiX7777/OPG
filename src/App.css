@@ -19,8 +19,7 @@ html {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-image: url('./imgs/pic6.jpg');
-  background-image: url('./imgs/background.JPG');
+  background-image: url('/imgs/background.JPG');
   background-size: cover;
   /* min-height: -webkit-fill-available; */
   background-repeat: no-repeat;

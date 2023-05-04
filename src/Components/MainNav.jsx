@@ -1,9 +1,9 @@
 import classes from './MainNav.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from '../imgs/logo.png';
+import logo from '/imgs/logo.png';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useState } from 'react';
-import burger from '../imgs/burger.svg';
+import burger from '/imgs/burger.svg';
 
 const MainNav = () => {
   const [openMenu, setopenMenu] = useState(false);
@@ -28,7 +28,7 @@ const MainNav = () => {
                   navData.isActive ? classes.active : ''
                 }
               >
-                Home
+                Početna
               </NavLink>
             </li>
             <li>
@@ -38,7 +38,7 @@ const MainNav = () => {
                   navData.isActive ? classes.active : ''
                 }
               >
-                About
+                O nama
               </NavLink>
             </li>
             <li>
@@ -48,7 +48,7 @@ const MainNav = () => {
                   navData.isActive ? classes.active : ''
                 }
               >
-                Products
+                Proizvodi
               </NavLink>
             </li>
             <li>
@@ -58,7 +58,7 @@ const MainNav = () => {
                   navData.isActive ? classes.active : ''
                 }
               >
-                Gallery
+                Galerija
               </NavLink>
             </li>
             <li>
@@ -68,7 +68,7 @@ const MainNav = () => {
                   navData.isActive ? classes.active : ''
                 }
               >
-                Contact
+                Kontakt
               </NavLink>
             </li>
           </ul>
