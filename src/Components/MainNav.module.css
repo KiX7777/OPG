@@ -9,6 +9,18 @@ nav {
   justify-content: space-between;
   padding: 0 50px;
   height: 75px;
+  position: relative;
+}
+
+nav:after {
+  width: 100%;
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -5px;
+  height: 30px;
+  background-image: url('imgs/bees-strip.png');
+  background-size: contain;
 }
 
 nav ul {
@@ -29,6 +41,7 @@ nav li a {
   position: relative;
   transition: 300ms ease;
   color: black;
+  filter: drop-shadow(0 7px 4px rgba(0, 0, 0, 0.5));
 }
 
 nav li a::after {

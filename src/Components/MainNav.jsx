@@ -7,6 +7,7 @@ import burger from '/imgs/burger.svg';
 
 const MainNav = () => {
   const [openMenu, setopenMenu] = useState(false);
+  const [isHome, setIsHome] = useState(true);
   const navigate = useNavigate();
   return (
     <>
@@ -16,23 +17,30 @@ const MainNav = () => {
             className={classes.logo}
             onClick={() => {
               navigate('/home');
+              setIsHome(true);
             }}
           >
             <img src={logo} alt='logo' />
           </div>
           <ul>
+            {!isHome && (
+              <li>
+                <NavLink
+                  to='/home'
+                  onClick={() => {
+                    setIsHome(true);
+                  }}
+                  className={(navData) =>
+                    navData.isActive ? classes.active : ''
+                  }
+                >
+                  Početna
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
-                to='/home'
-                className={(navData) =>
-                  navData.isActive ? classes.active : ''
-                }
-              >
-                Početna
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
+                onClick={() => setIsHome(false)}
                 to='/about'
                 className={(navData) =>
                   navData.isActive ? classes.active : ''
@@ -44,6 +52,7 @@ const MainNav = () => {
             <li>
               <NavLink
                 to='/products'
+                onClick={() => setIsHome(false)}
                 className={(navData) =>
                   navData.isActive ? classes.active : ''
                 }
@@ -54,6 +63,7 @@ const MainNav = () => {
             <li>
               <NavLink
                 to='/gallery'
+                onClick={() => setIsHome(false)}
                 className={(navData) =>
                   navData.isActive ? classes.active : ''
                 }
@@ -64,6 +74,7 @@ const MainNav = () => {
             <li>
               <NavLink
                 to='/contact'
+                onClick={() => setIsHome(false)}
                 className={(navData) =>
                   navData.isActive ? classes.active : ''
                 }
@@ -82,6 +93,7 @@ const MainNav = () => {
               alt='logo'
               onClick={() => {
                 navigate('/home');
+                setIsHome(true);
               }}
             />
           </div>
@@ -106,23 +118,27 @@ const MainNav = () => {
                 !openMenu ? `${classes.closed}` : ''
               }`}
             >
+              {!isHome && (
+                <li>
+                  <NavLink
+                    onClick={() => {
+                      setopenMenu((prev) => !prev);
+                      setIsHome(true);
+                    }}
+                    to='/home'
+                    className={(navData) =>
+                      navData.isActive ? classes.active : ''
+                    }
+                  >
+                    Početna
+                  </NavLink>
+                </li>
+              )}
               <li>
                 <NavLink
                   onClick={() => {
                     setopenMenu((prev) => !prev);
-                  }}
-                  to='/home'
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ''
-                  }
-                >
-                  Početna
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={() => {
-                    setopenMenu((prev) => !prev);
+                    setIsHome(false);
                   }}
                   to='/about'
                   className={(navData) =>
@@ -136,6 +152,7 @@ const MainNav = () => {
                 <NavLink
                   onClick={() => {
                     setopenMenu((prev) => !prev);
+                    setIsHome(false);
                   }}
                   to='/products'
                   className={(navData) =>
@@ -149,6 +166,7 @@ const MainNav = () => {
                 <NavLink
                   onClick={() => {
                     setopenMenu((prev) => !prev);
+                    setIsHome(false);
                   }}
                   to='/gallery'
                   className={(navData) =>
@@ -162,6 +180,7 @@ const MainNav = () => {
                 <NavLink
                   onClick={() => {
                     setopenMenu((prev) => !prev);
+                    setIsHome(false);
                   }}
                   to='/contact'
                   className={(navData) =>

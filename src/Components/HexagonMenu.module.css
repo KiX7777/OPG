@@ -25,11 +25,20 @@
   position: relative;
   width: 350px;
   height: 100%;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.048);
   z-index: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  transition: 300ms ease;
+}
+
+.hexagon:active,
+.hexagon:focus {
+  transform: scale(0.95);
+  outline: none;
 }
 
 .row:last-of-type {
@@ -37,11 +46,13 @@
   left: 175px;
 }
 
-.hexagon::before {
-  background-color: rgba(255, 0, 0, 0.731);
+.hexagon::before,
+.hexagon::after {
+  background-color: #cd911a;
   width: calc(100% - 5px);
   height: calc(100% - 5px);
   content: "";
+  transform: scale(1.03);
   position: absolute;
   left: 2.5px;
   display: block;
@@ -53,6 +64,34 @@
 .hexagon::before {
   -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
           clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.abouthex:after {
+  background-image: url("imgs/information.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.galleryhex:after {
+  background-image: url("imgs/image-gallery.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.productshex:after {
+  background-image: url("imgs/honey.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 60% 40%;
+}
+
+.contacthex:after {
+  background-image: url("imgs/contact-us.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (width <= 1368px) {
@@ -113,6 +152,12 @@
     position: relative;
     left: 25%;
   }
+  .contacthex:after,
+  .abouthex:after,
+  .productshex:after,
+  .galleryhex:after {
+    transform: rotate(270deg);
+  }
 }
 @media screen and (width <= 400px) {
   .hexagon {
@@ -151,5 +196,22 @@
   .row:last-of-type {
     position: relative;
     left: 0;
+  }
+}
+@media screen and (width >= 1921px) {
+  .hexContainer {
+    width: 100%;
+    height: 65%;
+  }
+  .row {
+    height: calc(45% - 5px);
+    width: 100%;
+  }
+  .hexagon {
+    width: 450px;
+  }
+  .row:last-of-type {
+    position: relative;
+    left: 225px;
   }
 }/*# sourceMappingURL=HexagonMenu.module.css.map */
