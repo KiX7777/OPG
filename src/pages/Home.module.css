@@ -53,4 +53,9 @@
     width: 90%;
     text-align: center;
   }
+}
+@media screen and (width <= 950px) and (height < 500px) {
+  .homeContainer h1 {
+    margin: 0;
+  }
 }/*# sourceMappingURL=Home.module.css.map */
