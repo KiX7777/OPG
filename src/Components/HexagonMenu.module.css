@@ -67,28 +67,28 @@
 }
 
 .abouthex:after {
-  background-image: url("imgs/information.png");
+  background-image: url("/imgs/information.png");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .galleryhex:after {
-  background-image: url("imgs/image-gallery.png");
+  background-image: url("/imgs/image-gallery.png");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .productshex:after {
-  background-image: url("imgs/honey.png");
+  background-image: url("/imgs/honey.png");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: 60% 40%;
 }
 
 .contacthex:after {
-  background-image: url("imgs/contact-us.png");
+  background-image: url("/imgs/contact-us.png");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
