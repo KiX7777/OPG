@@ -1,5 +1,3 @@
-import { useReducer } from 'react';
-
 const initialState = {
   name: '',
   email: '',
@@ -44,9 +42,18 @@ const reducer = (state, action) => {
         ...state,
         emailTouched: true,
       };
-    case 'sendingMsg':
+    case 'sendingRequest':
       return {
         ...state,
+        isSending: true,
+      };
+    case 'sentRequest':
+      return {
+        ...state,
+        isSending: false,
+        nameTouched: false,
+        emailTouched: false,
+        textTouched: false,
       };
     case 'error':
       return {
@@ -59,4 +66,4 @@ const reducer = (state, action) => {
   }
 };
 
-export const [state, dispatch] = useReducer(reducer, initialState);
+export { initialState, reducer };

@@ -1,11 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import classes from './Home.module.css';
-import { ScaleLoader } from 'react-spinners';
-import LoadingSpinner from '../Components/LoadingSpinner';
-
+import HexagonMenu from '../Components/HexagonMenu';
 const Home = () => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <div className={classes.homeContainer}>
@@ -19,6 +16,7 @@ const Home = () => {
       >
         Home
       </h1>
+      <HexagonMenu />
     </div>
   );
 };

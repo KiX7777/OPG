@@ -11,7 +11,7 @@ nav {
   height: 75px;
 }
 
-ul {
+nav ul {
   height: 100%;
   display: flex;
   gap: 20px;

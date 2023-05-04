@@ -1,31 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from '../pages/Contact.module.css';
 import { ScaleLoader } from 'react-spinners';
-import { state, dispatch } from './contactReducer';
+import { initialState, reducer } from './contactReducer';
 
 const ContactForm = ({ setError }) => {
-  const [name, setname] = useState('');
-  const [email, setemail] = useState('');
-  const [text, settext] = useState('');
-  const [nameTouched, setnameTouched] = useState(false);
-  const [emailTouched, setemailTouched] = useState(false);
-  const [textTouched, settextTouched] = useState(false);
-  const [isSending, setisSending] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const isEmail = (email) =>
     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
-  const nameIsValid = name.length >= 3;
-  const emailIsValid = isEmail(email);
-  const textIsValid = text.length > 0;
-
+  const nameIsValid = state.name.length >= 3;
+  const emailIsValid = isEmail(state.email);
+  const textIsValid = state.text.length > 0;
   const formValid = nameIsValid && emailIsValid && textIsValid;
-  const nameError = !nameIsValid && nameTouched;
-  const emailError = !emailIsValid && emailTouched;
-  const textError = !textIsValid && textTouched;
+
+  const nameError = !nameIsValid && state.nameTouched;
+  const emailError = !emailIsValid && state.emailTouched;
+  const textError = !textIsValid && state.textTouched;
 
   async function sendMessage(message) {
-    setisSending(true);
+    dispatch({
+      type: 'sendingRequest',
+    });
     try {
       const res = await fetch(
         'https://opg-373814-default-rtdb.firebaseio.com/messages.json',
@@ -37,16 +33,20 @@ const ContactForm = ({ setError }) => {
           },
         }
       );
-      console.log(res);
       if (!res.ok) {
-        setError('Sending message failed!');
+        throw new Error('Sending message failed!');
       }
       const data = await res.json();
+      console.log(data);
       navigate('/home', { state: 'Thank you for your message.' });
     } catch (err) {
       setError(err);
+      dispatch({
+        type: 'error',
+        payload: err,
+      });
     }
-    setisSending(false);
+    dispatch({ type: 'sentRequest' });
   }
 
   const navigate = useNavigate();
@@ -54,33 +54,44 @@ const ContactForm = ({ setError }) => {
   function handleSubmit(e) {
     e.preventDefault();
     const message = {
-      name,
-      email,
-      msg: text,
+      name: state.name,
+      email: state.email,
+      msg: state.text,
     };
 
     if (formValid) {
-      console.log(name, email, text);
       sendMessage(message);
-      setname('');
-      setemail('');
-      settext('');
-      setnameTouched(false);
-      setemailTouched(false);
-      settextTouched(false);
+      dispatch({
+        type: 'updateName',
+        payload: '',
+      });
+      dispatch({
+        type: 'updateEmail',
+        payload: '',
+      });
+      dispatch({
+        type: 'updateText',
+        payload: '',
+      });
     } else {
-      setnameTouched(true);
-      setemailTouched(true);
-      settextTouched(true);
+      dispatch({
+        type: 'nameTouched',
+      });
+      dispatch({
+        type: 'emailTouched',
+      });
+      dispatch({
+        type: 'textTouched',
+      });
     }
   }
 
   return (
     <div className={classes.formsContainer}>
-      {isSending && (
+      {state.isSending && (
         <ScaleLoader color='white' className={classes.formLoader} />
       )}
-      {!isSending && (
+      {!state.isSending && (
         <form>
           <div className={classes.formContainer}>
             <label htmlFor='name'>Name</label>
@@ -88,13 +99,18 @@ const ContactForm = ({ setError }) => {
               id='name'
               type='text'
               minLength={3}
-              value={name}
+              value={state.name}
               placeholder='Your name'
               onChange={(e) => {
-                setname(e.target.value);
+                dispatch({
+                  type: 'updateName',
+                  payload: e.target.value,
+                });
               }}
               onBlur={() => {
-                setnameTouched(true);
+                dispatch({
+                  type: 'nameTouched',
+                });
               }}
             ></input>
             {nameError && (
@@ -107,12 +123,17 @@ const ContactForm = ({ setError }) => {
               id='email'
               placeholder='Your email'
               type='email'
-              value={email}
+              value={state.email}
               onChange={(e) => {
-                setemail(e.target.value);
+                dispatch({
+                  type: 'updateEmail',
+                  payload: e.target.value,
+                });
               }}
               onBlur={() => {
-                setemailTouched(true);
+                dispatch({
+                  type: 'emailTouched',
+                });
               }}
             ></input>
             {emailError && (
@@ -123,14 +144,19 @@ const ContactForm = ({ setError }) => {
           <div className={classes.formContainer}>
             <label htmlFor='text'>Message</label>
             <textarea
-              value={text}
+              value={state.text}
               id='textarea'
               placeholder='Write your message for us.'
               onChange={(e) => {
-                settext(e.target.value);
+                dispatch({
+                  type: 'updateText',
+                  payload: e.target.value,
+                });
               }}
               onBlur={() => {
-                settextTouched(true);
+                dispatch({
+                  type: 'textTouched',
+                });
               }}
             ></textarea>
             {textError && (

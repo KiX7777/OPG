@@ -3,13 +3,9 @@ import { products } from '../pages/Products';
 import classes from './Proizvod.module.css';
 
 const Proizvod = (props) => {
-  const params = useParams();
   const navigate = useNavigate();
-  const item = products.find((item) => item.id === props.id);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-
-  const firstParam = queryParams.get('order');
 
   function handleBack() {
     navigate('/products');
@@ -20,10 +16,6 @@ const Proizvod = (props) => {
   }
 
   return (
-    // <div className={classes.productContainer}>
-    //   <button onClick={handleBack}>🔙</button>
-    //   <button onClick={order}>Order</button>
-    //   {firstParam === 'da' && <h5>Naručeno</h5>}
     <div className={classes.product}>
       <div className={classes.productInfo}>
         <span
@@ -48,12 +40,3 @@ const Proizvod = (props) => {
 };
 
 export default Proizvod;
-
-{
-  /* <Proizvod
-name={proizvod.name}
-price={proizvod.price}
-id={proizvod.id}
-/>;
-})} */
-}
