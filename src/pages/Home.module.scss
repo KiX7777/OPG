@@ -58,6 +58,14 @@
 }
 
 @media screen and (width <500px) {
+  .homeTitle {
+    p {
+      font-size: 8cqi;
+    }
+    .logo {
+      width: 40vw;
+    }
+  }
   .submitMsg {
     font-size: 24px;
     width: 90%;
