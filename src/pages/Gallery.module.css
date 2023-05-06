@@ -113,4 +113,15 @@
     position: absolute;
     right: 5%;
   }
+}
+@media screen and (height <= 500px) and (orientation: landscape) {
+  .openInfo {
+    height: 25px;
+    width: 25px;
+  }
+  .closeModal {
+    position: absolute;
+    right: 20%;
+    top: -3%;
+  }
 }/*# sourceMappingURL=Gallery.module.css.map */

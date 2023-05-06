@@ -31,7 +31,7 @@
 .productInfo {
   display: flex;
   flex-direction: column;
-  flex-basis: 20%;
+  flex-basis: 25%;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -79,14 +79,13 @@ h2 {
   display: flex;
   overflow: hidden;
   align-items: center;
-  justify-content: center;
-  flex: 1;
 }
 
 .productImgContainer {
   display: flex;
   width: 100%;
-  height: 80%;
+  height: 75%;
+  flex: 1;
   position: relative;
   // clip-path: polygon(
   //   0 0,
@@ -114,6 +113,7 @@ h2 {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  max-height: 370px;
 }
 
 button {
@@ -124,6 +124,12 @@ button {
   cursor: pointer;
 }
 
+@media screen and (width <= 1920px) {
+  .product img {
+    max-height: none;
+  }
+}
+
 @media screen and (width <= 500px) {
   .product {
     width: 100%;
@@ -131,6 +137,12 @@ button {
     left: 50%;
     transform: translateX(-50%);
     position: relative;
+  }
+  .productInfo {
+    flex-basis: 20%;
+  }
+  .productImgContainer {
+    flex: 1;
   }
 
   .productContainer {
@@ -143,5 +155,11 @@ button {
 
   button {
     font-size: 16px;
+  }
+}
+@media screen and (height <= 500px) and (orientation: landscape) {
+  .openInfo {
+    height: 25px;
+    width: 25px;
   }
 }

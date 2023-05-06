@@ -1,16 +1,14 @@
-import classes from './Gallery.module.css';
-import { useState, memo } from 'react';
+import classes from './Gallery.module.css'
+import { memo } from 'react'
+import GallerySlider from '../Components/GallerySlider'
+import '../App.css'
 
-import GallerySlider from '../Components/GallerySlider';
-import '../App.css';
-
-const Gallery = memo(() => {
+const Gallery = memo(({ setTitle }) => {
   return (
     <div className={classes.galleryContainer}>
-      {/* {images} {showModal && modal} */}
       <GallerySlider />
     </div>
-  );
-});
+  )
+})
 
-export default Gallery;
+export default Gallery

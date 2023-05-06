@@ -231,3 +231,32 @@ input:first-of-type:invalid:focus {
     overflow: hidden;
   }
 }
+
+@media screen and (height <= 500px) and (orientation: landscape) {
+  .contactContainer {
+    gap: 0;
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+  form {
+    width: 60%;
+    gap: 5px;
+  }
+  textarea {
+    width: 80%;
+    height: 10%;
+  }
+
+  input,
+  label {
+    margin: 0;
+    width: 80%;
+  }
+
+  form button {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+  }
+}

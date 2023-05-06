@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react';
-import classes from './About.module.css';
-import { ScaleLoader } from 'react-spinners';
+import { useState, useEffect } from 'react'
+import classes from './About.module.css'
+import { ScaleLoader } from 'react-spinners'
+import DocumentMeta from 'react-document-meta'
 
 const About = () => {
-  const [user, setUser] = useState(null);
-  const [loadMap, setLoadMap] = useState(true);
+  const [user, setUser] = useState(null)
+  const [loadMap, setLoadMap] = useState(true)
+
+  const meta = {
+    title: 'O nama || Pčelarstvo Božić',
+  }
 
   return (
     <div className={classes.aboutContainer}>
@@ -26,7 +31,7 @@ const About = () => {
             width='100%'
             height='100%'
             onLoad={() => {
-              setLoadMap((prev) => !prev);
+              setLoadMap((prev) => !prev)
             }}
             style={{
               borderRadius: '10px',
@@ -36,7 +41,7 @@ const About = () => {
             scrolling='no'
             marginHeight='0'
             marginWidth='0'
-            src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Josipa%20Martinca%2027+(OPG)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+            src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Josipa%20Martinca%2027,%20Vo%C4%87in,%20Croatia+(OPG)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
           >
             <a href='https://www.maps.ie/distance-area-calculator.html'>
               measure area map
@@ -45,7 +50,7 @@ const About = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

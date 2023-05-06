@@ -19,7 +19,7 @@ html {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-image: url('/imgs/background.JPG');
+  background-image: url('/imgs/background.webp');
   background-size: cover;
   /* min-height: -webkit-fill-available; */
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ nav li a {
 }
 
 .cardsSwiper {
-  margin-top: 5%;
+  margin-top: 3%;
   width: 30% !important;
   max-width: 500px;
   min-height: 450px;
@@ -205,5 +205,11 @@ nav li a {
     min-height: 300px;
     height: 350px;
     position: absolute;
+  }
+}
+@media screen and (height <= 500px) and (orientation: landscape) {
+  .cardsSwiper .swiper-wrapper {
+    width: 50vw !important;
+    height: 50vh !important;
   }
 }

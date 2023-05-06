@@ -28,4 +28,9 @@
   .map {
     height: 40dvh !important;
   }
+}
+@media screen and (height <= 500px) and (orientation: landscape) {
+  .mapContainer {
+    width: 40%;
+  }
 }/*# sourceMappingURL=About.module.css.map */

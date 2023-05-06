@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import '../App.css';
-import { EffectCards } from 'swiper';
-import classes from './Proizvod.module.css';
-import Proizvod from './Proizvod';
-import { useState } from 'react';
-import GalleryModal from './GalleryModal';
+import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/effect-cards'
+import '../App.css'
+import { EffectCards } from 'swiper'
+import classes from './Proizvod.module.css'
+import Proizvod from './Proizvod'
+import { useState } from 'react'
+import GalleryModal from './GalleryModal'
 
 const ProductList = (props) => {
-  const { products } = props;
-  console.log(products);
-  const swiper = useSwiper();
-  const [activeIndex, setActiveIndex] = useState();
-  const [openModal, setOpenModal] = useState(false);
+  const { products, setTitle } = props
+  console.log(products)
+  const swiper = useSwiper()
+  const [activeIndex, setActiveIndex] = useState()
+  const [openModal, setOpenModal] = useState(false)
 
   const slides = products.map((proizvod, i) => (
     <SwiperSlide key={i}>
@@ -26,16 +26,16 @@ const ProductList = (props) => {
         openModal={showDetails}
       />
     </SwiperSlide>
-  ));
+  ))
 
   function closeModal() {
-    setOpenModal(false);
+    setOpenModal(false)
   }
 
   function showDetails(id) {
-    setActiveIndex(id);
-    setOpenModal(true);
-    console.log(products[id]);
+    setActiveIndex(id)
+    setOpenModal(true)
+    console.log(products[id])
   }
 
   return (
@@ -45,8 +45,8 @@ const ProductList = (props) => {
       <Swiper
         effect={'cards'}
         onActiveIndexChange={(e) => {
-          setActiveIndex(e.activeIndex);
-          console.log(e.activeIndex);
+          setActiveIndex(e.activeIndex)
+          console.log(e.activeIndex)
         }}
         grabCursor={true}
         modules={[EffectCards]}
@@ -61,7 +61,7 @@ const ProductList = (props) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProductList;
+export default ProductList

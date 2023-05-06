@@ -19,7 +19,7 @@ const MainNav = ({ isHome, setIsHome }) => {
               setIsHome(true);
             }}
           >
-            <img src={logo} alt='logo' />
+            <img src={logo} alt='OPG Božić logo' />
           </div>
           <ul>
             {!isHome && (
