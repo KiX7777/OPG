@@ -2,7 +2,7 @@ nav {
   width: 100%;
   background-color: #333;
   /* background-color: rgba(0, 0, 0, 0.603); */
-  background-color: rgba(220, 119, 19, 0.3607843137);
+  background-color: #dc77135c;
   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -12,28 +12,27 @@ nav {
   position: relative;
   z-index: 50;
 }
-
 nav::before {
   width: 100%;
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   top: 0;
   z-index: 1;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
   height: 100%;
 }
 
 nav:after {
   width: 100%;
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   z-index: 3;
   bottom: -5px;
   height: 30px;
-  background-image: url("/imgs/bees-strip.png");
+  background-image: url('/imgs/bees-strip.png');
   background-size: contain;
 }
 
@@ -48,7 +47,6 @@ nav li {
   padding: 5px 20px;
   transition: 300ms;
 }
-
 nav li a {
   color: #aaa;
   text-decoration: none;
@@ -60,7 +58,7 @@ nav li a {
 }
 
 nav li a::after {
-  content: "";
+  content: '';
   width: 0%;
   height: 2px;
   position: absolute;
@@ -83,7 +81,13 @@ nav a.focus::after {
   width: 35px;
   height: 35px;
   position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   z-index: 3;
@@ -98,26 +102,44 @@ nav a.focus::after {
   border-radius: 9px;
   opacity: 1;
   left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
 
 .hamburger span:nth-child(1) {
   top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .hamburger span:nth-child(2) {
   top: 12px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .hamburger span:nth-child(3) {
   top: 24px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center;
 }
 
 .hamburger.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 0;
   left: 0;
@@ -129,6 +151,9 @@ nav a.focus::after {
 }
 
 .hamburger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 25px;
   left: 0;
@@ -163,7 +188,8 @@ nav a.focus::after {
   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom, #f27d0f, #f3aa1d);
   visibility: visible;
-  transition: visibility 300ms linear, opacity 300ms linear 100ms, transform 300ms linear;
+  transition: visibility 300ms linear, opacity 300ms linear 100ms,
+    transform 300ms linear;
   height: initial;
   z-index: 50;
 }
@@ -209,4 +235,4 @@ nav a.focus::after {
   nav li a {
     font-size: clamp(20px, 2vw, 32px);
   }
-}/*# sourceMappingURL=MainNav.module.css.map */
+}
