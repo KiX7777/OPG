@@ -4,22 +4,23 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 620px;
+  flex: 1;
 }
 
 .row {
   // display: flex;
   gap: 0;
   overflow: hidden;
-  height: calc(50% - 5px);
+  height: calc(30% - 5px);
   position: relative;
   display: inline-flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   margin-left: -10%;
+  max-height: 181px;
 }
 
 .hexagon {
@@ -27,7 +28,7 @@
   // width: 35cqi;
   position: relative;
   // height: 40cqmin;
-  width: 350px;
+  width: 225px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.048);
   z-index: 1;
@@ -37,6 +38,7 @@
   justify-content: center;
   filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
   transition: 300ms ease;
+  max-height: 180px;
 }
 
 .hexagon:active,
@@ -47,7 +49,7 @@
 
 .row:last-of-type {
   position: relative;
-  left: 175px;
+  left: 115px;
 }
 
 .hexagon::before,
@@ -74,46 +76,39 @@
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
-// .abouthex:before {
-//   background-image: url('imgs/information.png');
-//   background-size: 50%;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
-.abouthex:after {
-  background-image: url('/imgs/information.png');
-  background-size: 50%;
+.hexagon:after {
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 75%;
+}
+
+.abouthex:after {
+  background-image: url('/imgs/onama.png');
 }
 .galleryhex:after {
-  background-image: url('/imgs/image-gallery.png');
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url('/imgs/galerija.png');
 }
 .productshex:after {
-  background-image: url('/imgs/honey.png');
-  background-size: 50%;
-  background-repeat: no-repeat;
+  background-image: url('/imgs/proizvodi.png');
   background-position: 60% 40%;
 }
 .contacthex:after {
-  background-image: url('/imgs/contact-us.png');
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url('/imgs/kontakt.png');
 }
 
 @media screen and (width<=1368px) {
   .row {
-    height: calc(40% - 5px);
+    // height: calc(40% - 5px);
+    height: 30cqi;
     width: 100%;
+    // max-height: 30cqi;
   }
   .hexagon {
     // height: 32.5cqmin;
-    width: 300px;
+    max-height: 250px;
+    height: 30cqi;
   }
+
   .row:last-of-type {
     position: relative;
     left: 150px;
@@ -127,10 +122,11 @@
   .row {
     height: calc(35% - 5px);
     width: 100%;
+    max-height: 30cqi;
   }
   .hexagon {
+    width: 35cqi;
     // height: 32.5cqmin;
-    width: 250px;
   }
   .row:last-of-type {
     position: relative;
@@ -149,6 +145,7 @@
   .hexagon {
     // height: 32.5cqmin;
     width: 200px;
+    width: 35cqi;
   }
   .row:last-of-type {
     position: relative;
@@ -160,9 +157,14 @@
     transform: rotate(90deg);
     min-height: initial;
     height: 90%;
+    justify-content: center;
   }
   .hexagon {
-    width: 225px;
+    width: 250px;
+    height: 45cqi;
+  }
+  .row {
+    max-height: 45cqi;
   }
   .row:last-of-type {
     position: relative;
@@ -187,9 +189,10 @@
   .hexContainer {
     width: 90%;
     align-items: normal;
+    justify-content: center;
   }
   .hexagon {
-    width: 200px;
+    height: 40cqi;
   }
   .row:last-of-type {
     position: relative;
@@ -197,6 +200,7 @@
   .row {
     height: calc(35% - 5px);
     width: 100%;
+    max-height: 40cqi;
   }
 }
 
@@ -204,16 +208,21 @@
   .hexContainer {
     width: 100%;
     flex-direction: row;
-    min-height: 280px;
+    min-height: 250px;
+    align-items: initial;
   }
   .row {
-    height: calc(60% - 5px);
+    height: 20cqi;
     width: 100%;
     margin: 0;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
 
   .hexagon {
-    width: 200px;
+    width: 20cqi;
+    height: 17cqi;
+    max-height: 150px;
   }
   .row:last-of-type {
     position: relative;
@@ -227,12 +236,14 @@
     height: 65%;
   }
   .row {
-    height: calc(45% - 5px);
+    height: calc(35% - 5px);
     width: 100%;
+    max-height: none;
   }
   .hexagon {
     // height: 32.5cqmin;
-    width: 450px;
+    width: 400px;
+    max-height: none;
   }
   .row:last-of-type {
     position: relative;

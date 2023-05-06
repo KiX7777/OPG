@@ -1,5 +1,5 @@
-import { Link, Outlet } from 'react-router-dom';
-import ProductList from '../Components/ProductList';
+import { Link, Outlet } from 'react-router-dom'
+import ProductList from '../Components/ProductList'
 
 export const products = [
   {
@@ -32,19 +32,12 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Medica',
-    price: 10,
-    info: `Medica najčešće ima raspon od 15 do 25 posto alkohola, a rijetko doseže i 30 posto. Može se s lakoćom pripremati i u kućnoj radinosti jer se osnovna medica sastoji od rakije, meda i vode te začina po želji. Priprema se tako da se u veću posudu ulije litra odabrane rakije koja ima do 50 posto alkohola, stavlja se do pola kile meda te se ulijeva do pola litre vode, ovisno o tome koju jačinu likera pokušavate postići. Uz dodatak korice limuna mješavina se polako zagrijava kako bi se med otopio. Kada se svi sastojci povežu, medica se ulijeva u veliku bocu te ostavlja da se svi sastojci prožmu. Nakon dva tjedna mirovanja, uz tek povremeno protresanje boce, medica se pretače kroz gazu kako bi se dobio čisti napitak koji je moguće odmah piti, no medica je bolja što dulje stoji pa je tako u brojnim obiteljima čuvaju za posebne prilike i nazdravljanje sretnim trenucima.`,
-    img: 'https://images.unsplash.com/photo-1615887625746-f3d2aa27e048?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  },
-  {
-    id: 5,
     name: 'Pelud',
     info: `Pčele sakupljaju cvjetni pelud zato što sadrži bjelančevine, masti, šećere, vitamine i druge korisne tvari za njegovanje legla. Ako nema dovoljno unosa cvjetnog praha u košnicu pčele zaostaju u razvoju. Peludi raznih vrsta biljaka imaju određene i stalne veličine, boju i oblik. Ako gledamo pod mikroskopom pelud uzet s tijela pčele ili iz meda, po njihovoj veličini i obliku možemo odrediti koje je cvjetove posjetila pčela, odnosno od kojih biljaka potiče med. Veličina peludovih zrna raznih biljaka bitno se razlikuju. U većini slučajeva ta zrna dostižu oko 0,015 - 0,050 mm u promjeru, a kod samo malog broja biljaka npr. tikava, 0,15 - 0,20 mm. Po boji peluda može se raspoznati od kojih je biljaka sakupljeno: s maline je bijel, s jabuka je svijetložut, sa suncokreta i žutog kokosa je zlatnožut, s krušaka je crvenožut, s marelice i kestena je tamnocrven, s bijele djeteline je smeđ, s hrasta je žutozelen, s lipe je svijetlozelen, s facelije je ljubičast i tako dalje. Cvjetni pelud ili cvjetni prah kao pčelinji proizvod izuzetno je zdrav kao dodatak ljudskoj prehrani.`,
     price: 10,
     img: 'https://pcelarstvo-veber.hr/cms/wp-content/uploads/2017/10/cvjetni-pelud.jpg.webp',
   },
-];
+]
 
 const Products = () => {
   return (
@@ -52,7 +45,7 @@ const Products = () => {
       <ProductList products={products} />
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products
