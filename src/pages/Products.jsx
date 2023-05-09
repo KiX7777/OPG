@@ -1,4 +1,5 @@
 import ProductList from '../Components/ProductList'
+import { useEffect } from 'react'
 
 export const products = [
   {
@@ -38,7 +39,11 @@ export const products = [
   },
 ]
 
-const Products = ({ setTitle }) => {
+const Products = ({ setTitle, setIsHome }) => {
+  useEffect(() => {
+    setIsHome()
+  }, [])
+
   return (
     <>
       <ProductList products={products} />

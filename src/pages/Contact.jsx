@@ -1,12 +1,14 @@
 import ContactForm from '../Components/ContactForm'
 import classes from './Contact.module.css'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
-const Contact = () => {
+const Contact = (props) => {
   const href = useRef(null)
-
   const [error, setError] = useState('')
+  useEffect(() => {
+    props.setIsHome()
+  }, [])
 
   return (
     <CSSTransition

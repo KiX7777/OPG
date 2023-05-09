@@ -1,17 +1,16 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import classes from './About.module.css'
 import { ScaleLoader } from 'react-spinners'
 import DocumentMeta from 'react-document-meta'
 import { CSSTransition } from 'react-transition-group'
 
-const About = () => {
-  const [user, setUser] = useState(null)
+const About = ({ setIsHome }) => {
   const [loadMap, setLoadMap] = useState(true)
   const href = useRef(null)
 
-  const meta = {
-    title: 'O nama || Pčelarstvo Božić',
-  }
+  useEffect(() => {
+    setIsHome()
+  }, [])
 
   return (
     <CSSTransition

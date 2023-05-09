@@ -4,11 +4,14 @@ import HexagonMenu from '../Components/HexagonMenu'
 import logo from '/imgs/logo.webp'
 import { memo } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 const Home = memo(({ setIsHome }) => {
   const location = useLocation()
   const href = useRef(null)
+  useEffect(() => {
+    setIsHome()
+  }, [])
 
   return (
     <CSSTransition

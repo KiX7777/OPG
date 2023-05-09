@@ -30,6 +30,10 @@ function App() {
   const [pageTitle, setpageTitle] = useState(document.title)
   updateTitle(pageTitle)
 
+  function setHome() {
+    setIsHome(false)
+  }
+
   return (
     <>
       <Layout setIsHome={setIsHome} isHome={isHome}>
@@ -50,17 +54,25 @@ function App() {
               }
             />
 
-            <Route path='/about' element={<About setTitle={setpageTitle} />} />
+            <Route
+              path='/about'
+              element={<About setIsHome={setHome} setTitle={setpageTitle} />}
+            />
             <Route path='/products/'>
-              <Route index element={<Products setTitle={setpageTitle} />} />
+              <Route
+                index
+                element={
+                  <Products setIsHome={setHome} setTitle={setpageTitle} />
+                }
+              />
             </Route>
             <Route
               path='/gallery'
-              element={<Gallery setTitle={setpageTitle} />}
+              element={<Gallery setIsHome={setHome} setTitle={setpageTitle} />}
             />
             <Route
               path='/contact'
-              element={<Contact setTitle={setpageTitle} />}
+              element={<Contact setIsHome={setHome} setTitle={setpageTitle} />}
             />
             <Route path='*' element={<NotFound />} />
           </Routes>
