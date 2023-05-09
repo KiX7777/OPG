@@ -28,6 +28,7 @@ const meta = {
 function App() {
   const [isHome, setIsHome] = useState(true)
   const [pageTitle, setpageTitle] = useState(document.title)
+
   updateTitle(pageTitle)
 
   function setHome() {

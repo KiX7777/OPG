@@ -1,3 +1,7 @@
+@font-face {
+  font-family: bruno-ace;
+  src: url(/fonts/brunoace/bruno-ace-pro-rounded.ttf);
+}
 .homeContainer {
   width: 100%;
   height: calc(100dvh - 75px);
@@ -26,7 +30,7 @@
   p {
     font-size: 3cqi;
     color: #591a0d;
-    font-family: 'Bruno Ace', cursive;
+    font-family: bruno-ace, sans-serif;
     filter: drop-shadow(0 4px 1px rgba(255, 255, 255, 0.3));
   }
 }

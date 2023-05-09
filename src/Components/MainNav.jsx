@@ -14,8 +14,6 @@ import { useState } from 'react'
 import burger from '/imgs/burger.svg'
 
 const MainNav = ({ isHome, setIsHome }) => {
-  console.log(OsTypes, isMobile, isSmartTV, deviceType)
-  console.log(deviceType === 'smarttv')
   const [openMenu, setopenMenu] = useState(false)
   const navigate = useNavigate()
   return (

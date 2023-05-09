@@ -30,18 +30,6 @@ nav::before {
   height: 100%;
 }
 
-nav:after {
-  width: 100%;
-  position: absolute;
-  content: '';
-  left: 0;
-  z-index: 3;
-  bottom: -5px;
-  height: 30px;
-  background-image: url('/imgs/bees-strip.webp');
-  background-size: contain;
-}
-
 nav ul {
   height: 100%;
   display: flex;
