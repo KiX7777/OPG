@@ -6,10 +6,12 @@ import '../App.css'
 import { EffectCards } from 'swiper'
 import classes from './Proizvod.module.css'
 import Proizvod from './Proizvod'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import GalleryModal from './GalleryModal'
+import { CSSTransition } from 'react-transition-group'
 
 const ProductList = (props) => {
+  const href = useRef(null)
   const { products, setTitle } = props
   console.log(products)
   const swiper = useSwiper()
@@ -39,28 +41,40 @@ const ProductList = (props) => {
   }
 
   return (
-    <div className={classes.productContainer}>
-      <h1>Proizvodi</h1>
-
-      <Swiper
-        effect={'cards'}
-        onActiveIndexChange={(e) => {
-          setActiveIndex(e.activeIndex)
-          console.log(e.activeIndex)
-        }}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className='cardsSwiper'
-      >
-        {slides}
-      </Swiper>
-      {openModal && (
-        <GalleryModal
-          text={products[activeIndex].info}
-          closeModal={closeModal}
-        />
-      )}
-    </div>
+    <CSSTransition
+      timeout={1000}
+      appear={true}
+      in={true}
+      nodeRef={href}
+      classNames={{
+        appear: 'Appear',
+        appearActive: 'AppearActive',
+        appearDone: 'AppearActive',
+      }}
+    >
+      <div className={classes.productContainer} ref={href}>
+        <h1>Proizvodi</h1>
+        <Swiper
+          effect={'cards'}
+          onActiveIndexChange={(e) => {
+            setActiveIndex(e.activeIndex)
+            console.log(e.activeIndex)
+          }}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className='cardsSwiper'
+        >
+          {slides}
+        </Swiper>
+        {openModal && (
+          <GalleryModal
+            text={products[activeIndex].info}
+            closeModal={closeModal}
+            openModal={openModal}
+          />
+        )}
+      </div>
+    </CSSTransition>
   )
 }
 

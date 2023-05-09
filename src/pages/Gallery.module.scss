@@ -51,6 +51,7 @@
   border-radius: 10px;
   color: black;
   text-align: justify;
+  transition: all 400ms ease-out;
   animation: 400ms openmodal forwards ease-out;
 
   .productInfo {
@@ -74,6 +75,21 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes closemodal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.ModalOpen {
+  animation: openmodal 400ms ease-out forwards;
+}
+.ModalClose {
+  animation: closemodal 400ms ease-out forwards;
 }
 
 .backdrop {
