@@ -1,4 +1,4 @@
-import MainNav from '../Components/MainNav';
+import MainNav from '../Components/MainNav'
 
 const Layout = (props) => {
   return (
@@ -6,7 +6,7 @@ const Layout = (props) => {
       <MainNav isHome={props.isHome} setIsHome={props.setIsHome} />
       {props.children}
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
