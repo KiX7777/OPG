@@ -227,4 +227,8 @@ nav li a {
     width: 50vw !important;
     height: 50vh !important;
   }
+  .mySwiper {
+    margin-top: 0;
+    height: 100%;
+  }
 }
