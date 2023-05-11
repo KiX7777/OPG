@@ -20,8 +20,10 @@
 }
 
 .errorPic {
-  width: 300px;
+  width: 60%;
+  max-width: 800px;
   position: absolute;
   left: 50vw;
+  top: 20vh;
   transform: translateX(-50%);
 }
