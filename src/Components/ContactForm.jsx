@@ -59,7 +59,7 @@ const ContactForm = ({ setError }) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+      body: encode({ 'form-name': 'contact', ...message }),
     })
       .then(() => navigate('/home'))
       .catch((error) => alert(error))
