@@ -27,9 +27,9 @@ const ContactForm = ({ setError }) => {
   }
 
   async function sendMessage(message) {
-    // dispatch({
-    //   type: 'sendingRequest',
-    // })
+    dispatch({
+      type: 'sendingRequest',
+    })
     // try {
     //   const res = await fetch(
     //     'https://opg-373814-default-rtdb.firebaseio.com/messages.json',
@@ -56,29 +56,14 @@ const ContactForm = ({ setError }) => {
     // }
     // dispatch({ type: 'sentRequest' })
 
-    try {
-      dispatch({
-        type: 'sendingRequest',
-      })
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...message }),
-      })
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => navigate('/home'))
+      .catch((error) => alert(error))
 
-      if (!res.ok) {
-        throw new Error('Sending message failed!')
-      }
-      const data = await res.json()
-      console.log(data)
-      navigate('/home', { state: 'Thank you for your message.' })
-    } catch (error) {
-      setError(error)
-      dispatch({
-        type: 'error',
-        payload: error,
-      })
-    }
     dispatch({ type: 'sentRequest' })
   }
 
