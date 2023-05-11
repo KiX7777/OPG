@@ -25,5 +25,6 @@
   position: absolute;
   left: 50vw;
   top: 20vh;
+  filter: drop-shadow(1px 2px 1px white);
   transform: translateX(-50%);
 }/*# sourceMappingURL=NotFound.module.css.map */
