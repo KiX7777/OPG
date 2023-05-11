@@ -120,7 +120,7 @@ const ContactForm = ({ setError }) => {
         <ScaleLoader color='white' className={classes.formLoader} />
       )}
       {!state.isSending && (
-        <form name='contact'>
+        <form name='contact' data-netlify='true'>
           <div className={classes.formContainer}>
             <label htmlFor='name'>Name</label>
             <input

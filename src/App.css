@@ -17,6 +17,10 @@ html {
   min-height: 100dvh;
   min-height: -webkit-fill-available;
 }
+
+#contact {
+  display: none;
+}
 .Appear {
   opacity: 0;
 }
