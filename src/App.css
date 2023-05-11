@@ -171,7 +171,7 @@ nav li a {
   html,
   #root,
   .page {
-    width: 100vw;
+    width: 100dvw;
   }
 
   .mySwiper {
