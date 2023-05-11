@@ -57,6 +57,7 @@ const Home = memo(({ setIsHome }) => {
                 className={classes.logo}
               />
             </div>
+
             <HexagonMenu setIsHome={setIsHome} />
           </div>
         </CSSTransition>

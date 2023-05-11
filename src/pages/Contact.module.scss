@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 50px;
+  gap: 25px;
 }
 
 .contactContainer h1 {
@@ -196,6 +196,11 @@ input:first-of-type:invalid:focus {
   }
   to {
     transform: scale(1.15);
+  }
+}
+@media screen and (width <= 1368px) {
+  form {
+    width: 50%;
   }
 }
 

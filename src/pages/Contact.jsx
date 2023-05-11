@@ -25,6 +25,7 @@ const Contact = (props) => {
       <div ref={href} className={classes.contactContainer}>
         {error && <h1 className={classes.submitError}>Something went wrong</h1>}
         <h1>Kontaktirajte nas</h1>
+        <h1>Tel: 091/885-9296</h1>
         <ContactForm setError={setError} />
       </div>
     </CSSTransition>
