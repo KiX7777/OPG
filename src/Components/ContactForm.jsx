@@ -73,10 +73,10 @@ const ContactForm = ({ setError }) => {
       console.log(data)
       navigate('/home', { state: 'Thank you for your message.' })
     } catch (error) {
-      setError(err)
+      setError(error)
       dispatch({
         type: 'error',
-        payload: err,
+        payload: error,
       })
     }
     dispatch({ type: 'sentRequest' })
@@ -137,7 +137,7 @@ const ContactForm = ({ setError }) => {
         <ScaleLoader color='white' className={classes.formLoader} />
       )}
       {!state.isSending && (
-        <form name='contact' data-netlify='true'>
+        <form name='contact' data-netlify='true' action='/home'>
           <div className={classes.formContainer}>
             <label htmlFor='name'>Name</label>
             <input
