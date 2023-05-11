@@ -56,13 +56,30 @@ const ContactForm = ({ setError }) => {
     // }
     // dispatch({ type: 'sentRequest' })
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...message }),
-    })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error))
+    try {
+      dispatch({
+        type: 'sendingRequest',
+      })
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...message }),
+      })
+
+      if (!res.ok) {
+        throw new Error('Sending message failed!')
+      }
+      const data = await res.json()
+      console.log(data)
+      navigate('/home', { state: 'Thank you for your message.' })
+    } catch (error) {
+      setError(err)
+      dispatch({
+        type: 'error',
+        payload: err,
+      })
+    }
+    dispatch({ type: 'sentRequest' })
   }
 
   // const netlifysend = (e) => {
