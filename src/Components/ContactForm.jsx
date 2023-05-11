@@ -61,8 +61,15 @@ const ContactForm = ({ setError }) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...message }),
     })
-      .then(() => navigate('/home'))
-      .catch((error) => alert(error))
+      .then(() => navigate('/home', { state: 'Thank you for your message.' }))
+
+      .catch((error) => {
+        setError(error)
+        dispatch({
+          type: 'error',
+          payload: error,
+        })
+      })
 
     dispatch({ type: 'sentRequest' })
   }
