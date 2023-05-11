@@ -61,7 +61,7 @@ const ContactForm = ({ setError }) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...message }),
     })
-      .then(() => navigate('/home', { state: 'Thank you for your message.' }))
+      .then(() => navigate('/home', { state: 'Zahvaljujemo Vam na poruci.' }))
 
       .catch((error) => {
         setError(error)

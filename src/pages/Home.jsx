@@ -49,6 +49,8 @@ const Home = memo(({ setIsHome }) => {
             {location.state && (
               <h1 className={classes.submitMsg}>{location.state}</h1>
             )}
+            <h1 className={classes.submitMsg}>Zahvaljujemo Vam na poruci.</h1>
+
             <div className={classes.homeTitle}>
               <p>Pčelarstvo</p>
               <img
