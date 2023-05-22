@@ -131,14 +131,14 @@ const ContactForm = ({ setError }) => {
       {!state.isSending && (
         <form name='contact' data-netlify='true' action='/home'>
           <div className={classes.formContainer}>
-            <label htmlFor='name'>Name</label>
+            <label htmlFor='name'>Ime</label>
             <input
               id='name'
               name='name'
               type='text'
               minLength={3}
               value={state.name}
-              placeholder='Your name'
+              placeholder='Vaše ime'
               onChange={(e) => {
                 dispatch({
                   type: 'updateName',
@@ -152,14 +152,16 @@ const ContactForm = ({ setError }) => {
               }}
             ></input>
             {nameError && (
-              <small className={classes.errorMsg}>Enter your name.</small>
+              <small className={classes.errorMsg}>
+                Morate unijeti svoje ime.
+              </small>
             )}
           </div>
           <div className={classes.formContainer}>
             <label htmlFor='email'>Email</label>
             <input
               id='email'
-              placeholder='Your email'
+              placeholder='Vaša email adresa'
               type='email'
               name='email'
               value={state.email}
@@ -176,17 +178,19 @@ const ContactForm = ({ setError }) => {
               }}
             ></input>
             {emailError && (
-              <small className={classes.errorMsg}>Enter your email.</small>
+              <small className={classes.errorMsg}>
+                Morate unijeti vlastitu email adresu.
+              </small>
             )}
           </div>
 
           <div className={classes.formContainer}>
-            <label htmlFor='message'>Message</label>
+            <label htmlFor='message'>Poruka</label>
             <textarea
               value={state.text}
               id='message'
               name='messagge'
-              placeholder='Write your message for us.'
+              placeholder='Napiši nam poruku'
               onChange={(e) => {
                 dispatch({
                   type: 'updateText',
@@ -201,12 +205,12 @@ const ContactForm = ({ setError }) => {
             ></textarea>
             {textError && (
               <small className={classes.errorMsg}>
-                Enter your message that you want to send.
+                Poruka ne može biti prazna 😕
               </small>
             )}
           </div>
 
-          <button onClick={handleSubmit}>Send Message</button>
+          <button onClick={handleSubmit}>Pošalji poruku</button>
         </form>
       )}
     </div>

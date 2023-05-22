@@ -61,6 +61,7 @@ textarea {
   color: white;
   width: 70%;
   border-radius: 5px;
+  resize: none;
   padding: 5px;
   height: 100px;
   font-family: inherit;
